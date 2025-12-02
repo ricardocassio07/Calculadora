@@ -1,0 +1,439 @@
+body{
+    /* background: radial-gradient(circle, rgb(61, 61, 61) , rgb(0, 0, 0)); */
+    background-color: rgb(34, 34, 34);
+    /* background-color: black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* CSS para ocultar os contêineres por padrão */
+.modo-cientifico{
+    display: none;
+}
+
+/* Estilo para exibir o modo científico */
+.modo-cientifico.mostrar{
+    display: block;
+}
+
+/* Estilo para exibir o modo padrão */
+.modo-padrao.mostrar{
+    display: block;
+}
+
+.modo-padrao{
+    display: none;
+}
+
+.painel{
+    background-color: rgb(255, 255, 255);
+    width: 550px;
+    height: 780px;
+    /* margin-top: 100px; */
+    /* margin-bottom: 100px; */
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* opacity: 99%; */
+}
+
+.topo{
+    /* background-color: aquamarine; */
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 5%;
+    margin-bottom: 15px;
+    /* display: none; */
+}
+
+.modoCientifico{
+    /* background-color: blue; */
+    width: 10%;
+    height: 100%;
+    padding-left: 25px;
+}
+
+#btnCientifico{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    color: rgb(142, 142, 142);
+    font-size:x-large;
+    margin-bottom: 100px;
+}
+
+.btnPreto{
+    color: black;
+}
+
+.titulo{
+    /* background-color: #7450ed; */
+    display: none;
+    /* width: calc(100% - 10%); */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    padding-bottom: 8px;
+    /* padding-left: 135px; */
+}
+
+#menu{
+    /* background-color: brown; */
+    background-color: aliceblue;
+    width: 210px;
+    height: 300px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    border-radius: 10px;
+    border: 2px solid rgba(109, 109, 109, 0.115);
+    z-index: 20;
+    margin-left: 305px;
+    margin-top: 260px;
+    /* opacity: 30%; */
+}
+
+#fecharMenu{
+    /* background-color: aliceblue; */
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+}
+
+#fecharMenu:hover{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#menuBotoes{
+    /* background-color: aqua; */
+    width: 100%;
+    height: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btnMenu{
+ width: 90%;
+ height: 30px;
+ background-color: transparent;
+ /* background-color: aliceblue; */
+ border: none;
+ margin-top: 2px;
+ /* text-align: start; */
+}
+
+.btnMenu:hover{
+  background-color: rgba(243, 163, 26, 0.515);
+  color: aliceblue;
+  border-radius: 5px;
+  font-weight: bolder;
+}
+
+#tresPontos{
+    /* background-color: blue; */
+    background-color: transparent;
+    /* display: none; */
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-radius: 40%; */
+    border: none;
+}
+
+#tresPontos:hover{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.painelInput{
+    /* background-color: blue; */
+    width: 90%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.PaineisResultado{
+    /* background-color: chocolate; */
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: relative;
+    z-index: 10;
+}
+
+#telaResultadoCima{
+    /* display: none; */
+    position: absolute;
+    width: 85%;
+    height: 14px;
+    background-color: rgb(17, 17, 17);
+    border: none;
+    text-align: end;
+    color: aliceblue;
+    font-size: 14px;
+    /* padding-right: 30px; */
+    /* border-radius: 10px; */
+    margin-right: 11px;
+    border-top: 1.6px solid black;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+#telaResultado{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(17, 17, 17);
+    border: 1.6px solid black;
+    border-radius: 10px;
+    text-align: end;
+    color: aliceblue;
+    font-size: 50px;
+    padding-right: 30px;
+    /* padding-top: 18px; */
+    margin-bottom: 20px;
+}
+
+#ContainerBotoesPadrao{
+    /* background-color: rgba(0, 255, 255, 0.705); */
+    width: 100%;
+    height: 560px;
+    /* display: block; */
+    /* margin-top: 5px; */
+}
+
+.botoesCima{
+    /* background-color: rgb(195, 226, 43); */
+    width: 100%;
+    height: 20%;
+    /* border-bottom: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-top: 5px; */
+}
+
+.botoes{
+    /* background-color: blueviolet; */
+    width: 100%;
+    height: 20%;
+    /* border-bottom: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.botao{
+    background-color: rgb(132, 132, 132);
+    border: 1px solid rgb(132, 132, 132);
+    color: aliceblue;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+.botoesAmarelos{
+    background-color: rgb(243, 163, 26);
+    border: 1px solid rgb(243, 163, 26);
+    color: aliceblue;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+.botoesClaros{
+    background-color: rgb(169, 169, 169);
+    border: 1px solid rgb(169, 169, 169);
+    color: aliceblue;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+.botao0{
+    background-color: rgb(132, 132, 132);
+    border: 1px solid rgb(132, 132, 132);
+    color: aliceblue;
+    width: 225px;
+    height: 80px;
+    border-radius: 500px;
+    font-size: 40px;
+    padding-right: 130px;
+}
+
+.botoesClaros:hover {
+    opacity: 50%;
+}
+
+.botao:hover {
+    opacity: 50%;
+}
+
+.botao0:hover {
+    opacity: 50%;
+}
+
+.botoesAmarelos:hover{
+    opacity: 50%;
+}
+
+#ContainerBotoesCientifico{
+    /* background-color: aqua; */
+    width: 100%;
+    height: 500px;
+    /* display: block; */
+    flex-direction: column;
+}
+
+.btnsCientificoCima{
+    height: 63px;
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.btnsCientificoBaixo{
+    height: 440px;
+    /* background-color: rgb(183, 226, 43); */
+    display: flex;
+    flex-direction: row;
+}
+
+.botoesCientificosCima{
+    /* background-color: blueviolet; */
+    width: 100%;
+    height: 88px;
+    /* border-bottom: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 3px;
+}
+
+.botoesCientificos{
+    /* background-color: blueviolet; */
+    width: 100%;
+    height: 88px;
+    /* border-bottom: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.btnsCientificoBaixoDireita{
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(0, 191, 255); */
+}
+
+.botaoCientifico{
+    background-color: rgb(132, 132, 132);
+    border: 1px solid rgb(132, 132, 132);
+    color: aliceblue;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 34px;
+}
+
+.botoesAmarelosCientifico{
+    background-color: rgb(243, 163, 26);
+    border: 1px solid rgb(243, 163, 26);
+    color: aliceblue;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 34px;
+}
+
+.botoesClarosCientifico{
+    background-color: rgb(188, 188, 188);
+    border: 1px solid rgb(188, 188, 188);
+    color: aliceblue;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 34px;
+}
+
+.botaoCientifico0{
+    background-color: rgb(132, 132, 132);
+    border: 1px solid rgb(132, 132, 132);
+    color: aliceblue;
+    width: 218px;
+    height: 80px;
+    border-radius: 500px;
+    font-size: 34px;
+    padding-right: 139px;
+}
+
+.botaoEspecial{
+    background-color: rgb(95, 95, 95);
+    border: 1px solid rgb(95, 95, 95);
+    color: aliceblue;
+    width: 70px;
+    height: 50px;
+    border-radius: 12px;
+    font-size: 25px;
+    /* padding-bottom: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botaoEspecial:hover{
+    opacity: 50%;
+}
+
+.botoesClarosCientifico:hover {
+    opacity: 50%;
+}
+
+.botaoCientifico:hover {
+    opacity: 50%;
+}
+
+.botaoCientifico0:hover {
+    opacity: 50%;
+}
+
+.botoesAmarelosCientifico:hover{
+    opacity: 50%;
+}
+
+@media (max-width:550px){
+    .painel{
+        width: 95%;
+    }
+    #menu{
+        margin-left: 48%;
+    }
+    .botao0{
+        width: 203px;
+    }
+    .botaoCientifico0{
+        width: 145px;
+    }
+}

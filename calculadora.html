@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Cássio Ricardo Fernandes de Araujo">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="calculadora.css">
+    <title>Calculadora</title>
+</head>
+<body>
+<div class="painel">
+    <div class="topo">
+        <!-- <div class="modoCientifico">
+            <button id="btnCientifico" type="button" onclick="btnCientifico()"><i class="fa-solid fa-flask"></i></button>
+        </div> -->
+
+        <div class="titulo">
+            <h1 style="font-weight: 450;">Calculadora</h1>
+        </div>
+    </div>
+
+    <div class="painelInput" style="display: flex">
+        <div class="PaineisResultado">
+            <input id="telaResultadoCima" disabled>
+            <input id="telaResultado" disabled value="0">
+        </div>
+
+        <!-- Botões da calculadora padrão-->
+        <div id="ContainerBotoesPadrao" class="modo-padrao mostrar">
+            <div class="botoesCima">
+                <button type="button" class="botoesClaros" onclick="btnLimpar()">C</button>
+                <button type="button" class="botoesClaros" onclick="RetirarUltimoNumero()">CE</button>
+                <button type="button" class="botoesClaros" onclick="btnPositivoNegativo()">+/-</button>
+                <button type="button" class="botoesAmarelos" onclick="operacao('÷')">÷</button>
+            </div>
+            <div class="botoes">
+                <button type="button" class="botao" onclick="AdicionarNumero('7')">7</button>
+                <button type="button" class="botao" onclick="AdicionarNumero('8')">8</button>
+                <button type="button" class="botao" onclick="AdicionarNumero('9')">9</button>
+                <button type="button" class="botoesAmarelos" onclick="operacao('×')">×</button>
+            </div>
+            <div class="botoes">
+                <button type="button" class="botao" onclick="AdicionarNumero('4')">4</button>
+                <button type="button" class="botao" onclick="AdicionarNumero('5')">5</button>
+                <button type="button" class="botao" onclick="AdicionarNumero('6')">6</button>
+                <button type="button" class="botoesAmarelos" onclick="operacao('-')">-</button>
+            </div>
+            <div class="botoes">
+                <button type="button" class="botao" onclick="AdicionarNumero('1')">1</button>
+                <button type="button" class="botao" onclick="AdicionarNumero('2')">2</button>
+                <button type="button" class="botao" onclick="AdicionarNumero('3')">3</button>
+                <button type="button" class="botoesAmarelos" onclick="operacao('+')">+</button>
+            </div>
+            <div class="botoes">
+                <button type="button" class="botao0" onclick="AdicionarNumero(0)">0</button>
+                <button type="button" class="botao" onclick="btnDecimal()">.</button>
+                <button type="button" class="botoesAmarelos" onclick="Calcular()">=</button>
+            </div>
+        </div>
+
+        <!-- Botões da calculadora científica-->
+        <div id="ContainerBotoesCientifico" class="modo-cientifico">
+            <div class="btnsCientificoCima">
+                <button type="button" class="botaoEspecial" onclick="btnLimpar()">pi</button>
+                <button type="button" class="botaoEspecial" onclick="btnLimpar()">√x</button>
+                <button type="button" class="botaoEspecial" onclick="btnLimpar()">x²</button>
+                <button type="button" class="botaoEspecial" onclick="btnLimpar()">10ⁿ</button>
+                <button type="button" class="botaoEspecial" onclick="operacao('fatorial')">n!</button>
+                <button type="button" class="botaoEspecial" onclick="operacao('%')">%</button>
+            </div>
+            <div class="btnsCientificoCima">
+                <button type="button" class="botaoEspecial" onclick="btnLimpar()">1/x</button>
+                <button type="button" class="botaoEspecial" onclick="btnLimpar()">|X|</button>
+                <button type="button" class="botaoEspecial" onclick="btnLimpar()">BIN</button>
+                <button type="button" class="botaoEspecial" onclick="btnLimpar()">eⁿ</button>
+                <button type="button" class="botaoEspecial" onclick="btnLimpar()">C</button>
+                <button type="button" class="botaoEspecial" onclick="btnLimpar()">C</button>
+            </div>
+            <div class="btnsCientificoBaixo">
+                <div class="btnsCientificoBaixoDireita">
+                    <div class="botoesCientificosCima">
+                        <button type="button" class="botoesClarosCientifico" onclick="btnLimpar()">C</button>
+                        <button type="button" class="botoesClarosCientifico" onclick="RetirarUltimoNumero()">CE</button>
+                        <button type="button" class="botoesClarosCientifico" onclick="btnPositivoNegativo()">+/-</button>
+                        <button type="button" class="botoesAmarelosCientifico" onclick="operacao('×')">×</button>
+                    </div>
+                    <div class="botoesCientificos">
+                        <button type="button" class="botaoCientifico" onclick="AdicionarNumero('7')">7</button>
+                        <button type="button" class="botaoCientifico" onclick="AdicionarNumero('8')">8</button>
+                        <button type="button" class="botaoCientifico" onclick="AdicionarNumero('9')">9</button>
+                        <button type="button" class="botoesAmarelosCientifico" onclick="operacao('÷')">÷</button>
+                    </div>
+                    <div class="botoesCientificos">
+                        <button type="button" class="botaoCientifico" onclick="AdicionarNumero('4')">4</button>
+                        <button type="button" class="botaoCientifico" onclick="AdicionarNumero('5')">5</button>
+                        <button type="button" class="botaoCientifico" onclick="AdicionarNumero('6')">6</button>
+                        <button type="button" class="botoesAmarelosCientifico" onclick="operacao('-')">-</button>
+                    </div>
+                    <div class="botoesCientificos">
+                        <button type="button" class="botaoCientifico" onclick="AdicionarNumero('1')">1</button>
+                        <button type="button" class="botaoCientifico" onclick="AdicionarNumero('2')">2</button>
+                        <button type="button" class="botaoCientifico" onclick="AdicionarNumero('3')">3</button>
+                        <button type="button" class="botoesAmarelosCientifico" onclick="operacao('+')">+</button>
+                    </div>
+                    <div class="botoesCientificos">
+                        <button type="button" class="botaoCientifico0" onclick="AdicionarNumero(0)">0</button>
+                        <button type="button" class="botaoCientifico" onclick="btnDecimal()">.</button>
+                        <button type="button" class="botoesAmarelosCientifico" onclick="Calcular()">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="calculadora.js"></script>
+</body>
+</html>
